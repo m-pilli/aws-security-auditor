@@ -1,0 +1,14 @@
+# Commands to push to GitHub
+# Replace 'yourusername' with your actual GitHub username
+
+# Add remote repository
+git remote add origin https://github.com/yourusername/aws-security-auditor.git
+
+# Rename branch to main (GitHub's default)
+git branch -M main
+
+# Push code to GitHub
+git push -u origin main
+
+# After running these commands, your code will be on GitHub!
+
