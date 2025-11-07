@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # API Service
+  api:
+    build: .
+    container_name: security-auditor-api
+    command: python main.py --api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./database:/app/database
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  # Dashboard Service
+  dashboard:
+    build: .
+    container_name: security-auditor-dashboard
+    command: streamlit run dashboard/app.py --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./database:/app/database
+      - ./logs:/app/logs
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Scheduled Scanner (optional)
+  scanner:
+    build: .
+    container_name: security-auditor-scanner
+    command: python main.py --schedule daily
+    volumes:
+      - ./database:/app/database
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - api
+    restart: unless-stopped
+

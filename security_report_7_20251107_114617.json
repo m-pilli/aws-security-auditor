@@ -1,0 +1,56 @@
+{
+  "scan": {
+    "id": 7,
+    "scan_type": "all",
+    "start_time": "2025-11-07T11:45:36.931906",
+    "end_time": "2025-11-07T11:45:40.956044",
+    "status": "completed",
+    "findings_count": 2,
+    "critical_count": 1,
+    "high_count": 1,
+    "medium_count": 0,
+    "low_count": 0
+  },
+  "findings": [
+    {
+      "id": 13,
+      "scan_id": 7,
+      "service": "IAM",
+      "resource_id": "root-account",
+      "resource_name": "Root Account",
+      "finding_type": "Root Account MFA Not Enabled",
+      "severity": "critical",
+      "risk_score": 10,
+      "description": "Root account does not have MFA enabled",
+      "recommendation": "Enable MFA on the root account immediately",
+      "details": {
+        "account_mfa_enabled": 0
+      },
+      "created_at": "2025-11-07T11:45:38.834833",
+      "resolved": 0
+    },
+    {
+      "id": 14,
+      "scan_id": 7,
+      "service": "IAM",
+      "resource_id": "password-policy",
+      "resource_name": "Account Password Policy",
+      "finding_type": "No Password Policy",
+      "severity": "high",
+      "risk_score": 7,
+      "description": "No password policy configured for the account",
+      "recommendation": "Configure a strong password policy",
+      "details": {},
+      "created_at": "2025-11-07T11:45:38.847277",
+      "resolved": 0
+    }
+  ],
+  "summary": {
+    "total_findings": 2,
+    "critical": 1,
+    "high": 1,
+    "medium": 0,
+    "low": 0
+  },
+  "exported_at": "2025-11-07T11:46:17.954950"
+}
