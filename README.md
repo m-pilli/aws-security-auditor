@@ -136,10 +136,3 @@ This is a learning project. Feel free to extend it with:
 ## 📝 License
 
 MIT License - Feel free to use for learning and portfolio purposes!
-
-## 💼 Resume Description
-
-**Cloud Security Audit Automation – Python | AWS | FastAPI | Boto3 | SQLite**
-
-Built an automated security auditing system that scans AWS environments for IAM, S3, and EC2 misconfigurations. Implemented risk scoring, JSON/CSV reporting, and local alerting to identify over-permissive roles and unencrypted storage. Designed REST APIs for on-demand scans using FastAPI and stored results locally in SQLite.
-
